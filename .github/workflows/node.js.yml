@@ -31,6 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+          directory: ./angular-frontend
       - run: npm ci
       - run: npm run test:ci
       - run: npm build
