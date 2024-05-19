@@ -1,7 +1,5 @@
 <ng-container *ngIf="entry !== null">
   <app-page-header [title]="'Edit entry: ' + entry.title"></app-page-header>
-  <app-edit-entry
-    [entry]="entry"
-    (formSubmitted)="onSubmit($event)"
-  ></app-edit-entry>
+  <app-edit-entry [entry]="entry" (formSubmitted)="onSubmit($event)">
+  </app-edit-entry>
 </ng-container>
