@@ -5,10 +5,12 @@ name: Node.js CI
 
 on:
   push:
-    paths: ["./angular-frontend"]
+    paths:
+      - ./angular-frontend/*
     branches: [ "main" ]
   pull_request:
-    paths: ["./angular-frontend"]
+    paths:
+      - ./angular-frontend/*
     branches: [ "main" ]
 
 jobs:
@@ -19,16 +21,16 @@ jobs:
         working-directory: ./angular-frontend
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [ 18.x, 20.x ]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run test:ci
-    - run: npm build
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run test:ci
+      - run: npm build
