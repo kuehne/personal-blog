@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute, provideRouter } from '@angular/router';
 import { of } from 'rxjs';
@@ -14,8 +14,9 @@ describe('EditEntryPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EditEntryPageComponent, HttpClientModule, NoopAnimationsModule],
+      imports: [EditEntryPageComponent, NoopAnimationsModule],
       providers: [
+        provideHttpClient(),
         provideRouter(routes),
         BlogEntryService,
         {
