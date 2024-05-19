@@ -6,11 +6,11 @@ name: Node.js CI
 on:
   push:
     paths:
-      - ./angular-frontend/*
+      - angular-frontend/*
     branches: [ "main" ]
   pull_request:
     paths:
-      - ./angular-frontend/*
+      - angular-frontend/*
     branches: [ "main" ]
 
 jobs:

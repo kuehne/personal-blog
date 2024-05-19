@@ -11,11 +11,11 @@ name: Java CI with Maven
 on:
   push:
     paths:
-      - ./spring-backend/*
+      - spring-backend/*
     branches: [ "main" ]
   pull_request:
     paths:
-      - ./spring-backend/*
+      - spring-backend/*
     branches: [ "main" ]
 
 jobs:
