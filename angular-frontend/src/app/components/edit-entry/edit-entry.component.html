@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input formControlName="title" matInput />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Teaser</mat-label>
+        <textarea formControlName="teaser" matInput rows="8"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Content</mat-label>
+        <textarea formControlName="content" matInput rows="20"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-stroked-button color="primary">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<div></div>

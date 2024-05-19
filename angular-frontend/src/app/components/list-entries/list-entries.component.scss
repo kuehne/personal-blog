@@ -1,0 +1,15 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  padding: 2em 4em;
+}
+
+.align-end {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+}

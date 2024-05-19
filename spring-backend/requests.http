@@ -1,0 +1,31 @@
+# IntelliJ HTTP file
+
+### GET All entries
+GET  {{url}}/entries
+
+### GET Get single entry
+
+GET  {{url}}/entries/452
+
+### POST Create new entry
+
+POST {{url}}/entries
+Content-Type: application/json
+
+{
+  "content": "### Title\n__Subtitle__",
+  "title": "My Blog Entry",
+  "teaser": "My Teaser"
+}
+
+### PUT Update entry
+
+PUT {{url}}/entries/452
+Content-Type: application/json
+
+{
+  "content": "# Title\n## Subtitle\n<div>test</div>",
+  "title": "My Blog Entry",
+  "teaser": "My Teaser"
+}
+

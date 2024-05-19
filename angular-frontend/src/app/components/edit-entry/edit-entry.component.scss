@@ -1,0 +1,11 @@
+form {
+  padding: 2em 4em;
+  mat-form-field {
+    width: 100%;
+  }
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
