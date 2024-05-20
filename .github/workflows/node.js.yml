@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          directory: ./angular-frontend
+          cache-dependency-path: angular-frontend/package-lock.json
       - run: npm ci
       - run: npm run test:ci
       - run: npm build
