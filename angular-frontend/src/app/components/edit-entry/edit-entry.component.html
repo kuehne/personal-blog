@@ -5,14 +5,38 @@
         <mat-label>Title</mat-label>
         <input formControlName="title" matInput />
       </mat-form-field>
-      <mat-form-field>
-        <mat-label>Teaser</mat-label>
-        <textarea formControlName="teaser" matInput rows="8"></textarea>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Content</mat-label>
-        <textarea formControlName="content" matInput rows="20"></textarea>
-      </mat-form-field>
+      <div class="flex gap-2 w-100">
+        <div class="flex-1">
+          <mat-form-field>
+            <mat-label>Teaser</mat-label>
+            <textarea formControlName="teaser" matInput rows="8"></textarea>
+          </mat-form-field>
+        </div>
+        <div
+          class="flex-1"
+          [innerHTML]="
+            form.controls['teaser'].value
+              | markdown : { disableSanitizer: false }
+              | async
+          "
+        ></div>
+      </div>
+      <div class="flex gap-2 w-100">
+        <div class="flex-1">
+          <mat-form-field>
+            <mat-label>Content</mat-label>
+            <textarea formControlName="content" matInput rows="20"></textarea>
+          </mat-form-field>
+        </div>
+        <div
+          class="flex-1"
+          [innerHTML]="
+            form.controls['content'].value
+              | markdown : { disableSanitizer: false }
+              | async
+          "
+        ></div>
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <button type="submit" mat-stroked-button color="primary">Submit</button>

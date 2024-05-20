@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
+import { provideMarkdown } from 'ngx-markdown';
 import { routes } from '../../app.routes';
 import { BlogEntryService } from '../../services/blog-entry.service';
 import { CreateEntryPageComponent } from './create-entry-page.component';
@@ -18,7 +19,7 @@ describe('CreateEntryPageComponent', () => {
         HttpClientModule,
         NoopAnimationsModule,
       ],
-      providers: [BlogEntryService, provideRouter(routes)],
+      providers: [BlogEntryService, provideRouter(routes), provideMarkdown()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CreateEntryPageComponent);

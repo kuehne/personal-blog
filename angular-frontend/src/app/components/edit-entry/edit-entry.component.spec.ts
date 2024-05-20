@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { provideMarkdown } from 'ngx-markdown';
 import { EditEntryComponent } from './edit-entry.component';
 
 describe('EditEntryComponent', () => {
@@ -10,6 +11,7 @@ describe('EditEntryComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [EditEntryComponent, NoopAnimationsModule],
+      providers: [provideMarkdown()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EditEntryComponent);

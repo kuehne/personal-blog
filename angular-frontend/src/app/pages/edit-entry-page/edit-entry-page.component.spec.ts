@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute, provideRouter } from '@angular/router';
+import { provideMarkdown } from 'ngx-markdown';
 import { of } from 'rxjs';
 import { routes } from '../../app.routes';
 import { BlogEntryService } from '../../services/blog-entry.service';
@@ -18,6 +19,7 @@ describe('EditEntryPageComponent', () => {
       providers: [
         provideHttpClient(),
         provideRouter(routes),
+        provideMarkdown(),
         BlogEntryService,
         {
           provide: ActivatedRoute,
