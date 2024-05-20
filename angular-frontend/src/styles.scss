@@ -47,3 +47,20 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+// Backported classes from tailwind
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+.w-100 {
+  width: 100%;
+}
