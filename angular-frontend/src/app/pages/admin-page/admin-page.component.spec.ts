@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { routes } from '../../app.routes';
 import { BlogEntryService } from '../../services/blog-entry.service';
@@ -12,9 +12,9 @@ describe('AdminPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminPageComponent, HttpClientModule],
-      providers: [provideRouter(routes), BlogEntryService],
-    }).compileComponents();
+    imports: [AdminPageComponent],
+    providers: [provideRouter(routes), BlogEntryService, provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
 
     fixture = TestBed.createComponent(AdminPageComponent);
     component = fixture.componentInstance;

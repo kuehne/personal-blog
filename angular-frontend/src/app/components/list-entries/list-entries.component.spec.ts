@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { routes } from '../../app.routes';
 import { BlogEntryService } from '../../services/blog-entry.service';
@@ -12,9 +12,9 @@ describe('ListEntriesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ListEntriesComponent, HttpClientModule],
-      providers: [BlogEntryService, provideRouter(routes)],
-    }).compileComponents();
+    imports: [ListEntriesComponent],
+    providers: [BlogEntryService, provideRouter(routes), provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
 
     fixture = TestBed.createComponent(ListEntriesComponent);
     component = fixture.componentInstance;
