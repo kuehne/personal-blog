@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { ListEntriesComponent } from '../../components/list-entries/list-entries.component';
-import { PageHeaderComponent } from '../../components/page-header/page-header.component';
-import { BlogEntry } from '../../model/blog-entry';
+import { ListEntriesComponent } from '@app/components/list-entries/list-entries.component';
+import { PageHeaderComponent } from '@app/components/page-header/page-header.component';
+import { BlogEntry } from '@app/model/blog-entry';
 
 @Component({
   selector: 'app-admin-page',

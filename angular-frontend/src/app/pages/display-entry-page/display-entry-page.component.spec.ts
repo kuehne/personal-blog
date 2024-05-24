@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ActivatedRoute, provideRouter } from '@angular/router';
+import { routes } from '@app/app.routes';
+import { DisplayEntryComponent } from '@app/components/display-entry/display-entry.component';
+import { PageHeaderComponent } from '@app/components/page-header/page-header.component';
 import { of } from 'rxjs';
-import { routes } from '../../app.routes';
-import { DisplayEntryComponent } from '../../components/display-entry/display-entry.component';
-import { PageHeaderComponent } from '../../components/page-header/page-header.component';
 import { DisplayEntryPageComponent } from './display-entry-page.component';
 
 describe('DisplayEntryPageComponent', () => {

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { ResolveFn } from '@angular/router';
 
-import { BlogEntry } from '../model/blog-entry';
+import { BlogEntry } from '@app/model/blog-entry';
 import { blogEntryResolver } from './blog-entry.resolver';
 
 describe('blogEntryResolver', () => {

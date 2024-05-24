@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ListTeasersComponent } from '../../components/list-teasers/list-teasers.component';
-import { PageHeaderComponent } from '../../components/page-header/page-header.component';
-import { BlogEntry } from '../../model/blog-entry';
+import { ListTeasersComponent } from '@app/components/list-teasers/list-teasers.component';
+import { PageHeaderComponent } from '@app/components/page-header/page-header.component';
+import { BlogEntry } from '@app/model/blog-entry';
 
 @Component({
   selector: 'app-landing-page',

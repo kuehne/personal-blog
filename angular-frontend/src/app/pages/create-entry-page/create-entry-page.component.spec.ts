@@ -1,11 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { provideMarkdown } from 'ngx-markdown';
-import { routes } from '../../app.routes';
-import { BlogEntryService } from '../../services/blog-entry.service';
+import { routes } from '@app/app.routes';
+import { BlogEntryService } from '@app/services/blog-entry.service';
 import { CreateEntryPageComponent } from './create-entry-page.component';
 
 describe('CreateEntryPageComponent', () => {
@@ -14,10 +17,14 @@ describe('CreateEntryPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [CreateEntryPageComponent,
-        NoopAnimationsModule],
-    providers: [BlogEntryService, provideRouter(routes), provideMarkdown(), provideHttpClient(withInterceptorsFromDi())]
-}).compileComponents();
+      imports: [CreateEntryPageComponent, NoopAnimationsModule],
+      providers: [
+        BlogEntryService,
+        provideRouter(routes),
+        provideMarkdown(),
+        provideHttpClient(withInterceptorsFromDi()),
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CreateEntryPageComponent);
     component = fixture.componentInstance;

@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EditEntryComponent } from '../../components/edit-entry/edit-entry.component';
-import { PageHeaderComponent } from '../../components/page-header/page-header.component';
-import { BlogEntry } from '../../model/blog-entry';
-import { BlogEntryService } from '../../services/blog-entry.service';
+import { EditEntryComponent } from '@app/components/edit-entry/edit-entry.component';
+import { PageHeaderComponent } from '@app/components/page-header/page-header.component';
+import { BlogEntry } from '@app/model/blog-entry';
+import { BlogEntryService } from '@app/services/blog-entry.service';
 
 @Component({
   selector: 'app-edit-entry-page',

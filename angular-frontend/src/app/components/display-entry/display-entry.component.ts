@@ -3,7 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { BlogEntry } from '../../model/blog-entry';
+import { BlogEntry } from '@app/model/blog-entry';
 
 @Component({
   selector: 'app-display-entry',

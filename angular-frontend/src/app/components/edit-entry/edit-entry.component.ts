@@ -7,7 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MarkdownPipe } from 'ngx-markdown';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
-import { BlogEntry } from '../../model/blog-entry';
+import { BlogEntry } from '@app/model/blog-entry';
 
 @Component({
   selector: 'app-edit-entry',

@@ -3,8 +3,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
-import { BlogEntry } from '../../model/blog-entry';
-import { BlogEntryService } from '../../services/blog-entry.service';
+import { BlogEntry } from '@app/model/blog-entry';
+import { BlogEntryService } from '@app/services/blog-entry.service';
 
 @Component({
   selector: 'app-list-entries',
