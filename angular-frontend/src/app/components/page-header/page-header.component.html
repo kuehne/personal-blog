@@ -1,9 +1,8 @@
-<div class="page-header">
-  <h1>
-    <div>
-      <a routerLink="/" mat-icon-button><mat-icon>home</mat-icon></a>
-      {{ title }}
-    </div>
+<mat-toolbar class="navbar">
+  <mat-toolbar-row>
+    <a routerLink="/" mat-icon-button><mat-icon>home</mat-icon></a>
+    <div>{{ title }}</div>
+    <div class="flex-auto"></div>
     <a routerLink="/admin" mat-icon-button><mat-icon>settings</mat-icon></a>
-  </h1>
-</div>
+  </mat-toolbar-row>
+</mat-toolbar>
