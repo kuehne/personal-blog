@@ -1,6 +1,6 @@
 <div class="entries">
-  <ng-container *ngFor="let entry of entries">
-    <mat-card>
+  <ng-container *ngIf="entries && entries.length > 0; else empty_list">
+    <mat-card *ngFor="let entry of entries">
       <mat-card-title>
         <h2>{{ entry.title }}</h2>
       </mat-card-title>
@@ -13,4 +13,10 @@
       </mat-card-actions>
     </mat-card>
   </ng-container>
+  <ng-template #empty_list>
+    <div class="empty-list">
+      <mat-icon inline="true">error_outline</mat-icon>
+      <p>Error</p>
+    </div>
+  </ng-template>
 </div>
