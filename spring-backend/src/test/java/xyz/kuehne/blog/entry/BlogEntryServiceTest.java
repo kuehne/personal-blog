@@ -53,6 +53,7 @@ class BlogEntryServiceTest {
         BlogEntry mappedBlogEntry = new BlogEntry();
         mappedBlogEntry.setTitle("title");
         mappedBlogEntry.setContent("content&lt;div&gt;&lt;/div&gt;");
+        mappedBlogEntry.setHtmlContent("<p>content&lt;div&gt;&lt;/div&gt;</p>\n");
         Mockito.when(blogEntryMapper.inputToBlogEntry(Mockito.any())).thenReturn(mappedBlogEntry);
         Mockito.when(blogEntryRepository.save(mappedBlogEntry)).thenReturn(mappedBlogEntry);
         BlogEntry savedBlogEntry = blogEntryService.create(inputDto);
@@ -72,6 +73,7 @@ class BlogEntryServiceTest {
         blogEntry.setTitle("title");
         blogEntry.setContent("content");
         blogEntry.setId(1L);
+        blogEntry.setHtmlContent("<p>content&lt;div&gt;&lt;/div&gt;</p>\n");
         Mockito.when(blogEntryRepository.findById(1L)).thenReturn(Optional.of(blogEntry));
         BlogEntryInputDto inputDto = new BlogEntryInputDto("title", "content<div></div>", "teaser");
         Mockito.when(blogEntryRepository.save(blogEntry)).thenReturn(blogEntry);

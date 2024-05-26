@@ -3,11 +3,14 @@ package xyz.kuehne.blog.entry;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {BlogEntryMapperImpl.class})
 class BlogEntryMapperTest {
     @Autowired
@@ -86,7 +89,7 @@ class BlogEntryMapperTest {
             Assertions.assertThat(blogEntry.getId()).isEqualTo(1L);
             Assertions.assertThat(blogEntry.getTitle()).isEqualTo("title2");
             Assertions.assertThat(blogEntry.getContent()).isEqualTo("content&lt;div&gt;&lt;/div&gt;");
-            Assertions.assertThat(blogEntry.getHtmlContent()).isEqualTo("htmlContent");
+            Assertions.assertThat(blogEntry.getHtmlContent()).isEqualTo("<p>content&lt;div&gt;&lt;/div&gt;</p>\n");
         });
     }
 }

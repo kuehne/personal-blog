@@ -4,7 +4,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import xyz.kuehne.blog.utils.MarkdownUtils;
 
 import java.util.List;
 
@@ -27,16 +26,12 @@ public class BlogEntryService {
 
     public BlogEntry create(@NonNull BlogEntryInputDto blogEntryInputDto) {
         BlogEntry blogEntry = blogEntryMapper.inputToBlogEntry(blogEntryInputDto);
-        blogEntry.setHtmlContent(MarkdownUtils.convertMarkdownToHtml(blogEntryInputDto.content()));
-        blogEntry.setHtmlTeaser(MarkdownUtils.convertMarkdownToHtml(blogEntryInputDto.teaser()));
         return blogEntryRepository.save(blogEntry);
     }
 
     public BlogEntry update(long id, @NonNull BlogEntryInputDto blogEntryInputDto) throws IllegalArgumentException {
         BlogEntry blogEntry = blogEntryRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         blogEntryMapper.update(blogEntry, blogEntryInputDto);
-        blogEntry.setHtmlContent(MarkdownUtils.convertMarkdownToHtml(blogEntryInputDto.content()));
-        blogEntry.setHtmlTeaser(MarkdownUtils.convertMarkdownToHtml(blogEntryInputDto.teaser()));
         return blogEntryRepository.save(blogEntry);
     }
 
