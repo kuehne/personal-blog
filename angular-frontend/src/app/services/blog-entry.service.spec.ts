@@ -20,10 +20,13 @@ describe('BlogEntryService', () => {
     service = TestBed.inject(BlogEntryService);
     httpTestingController = TestBed.inject(HttpTestingController);
     mockBlogEntry = {
+      htmlContent: '<p>content</p>',
+      htmlTeaser: '<p>teaser</p>',
       content: 'content',
       teaser: 'teaser',
       id: 1,
       title: 'title',
+      createdAt: new Date(),
     };
   });
 

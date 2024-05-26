@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {BlogEntryMapperImpl.class})
 class BlogEntryMapperTest {
+    private static final ZonedDateTime NOW = ZonedDateTime.now();
     @Autowired
     private BlogEntryMapper mapper;
 
@@ -24,6 +26,7 @@ class BlogEntryMapperTest {
         blogEntry.setHtmlContent("htmlContent");
         blogEntry.setTeaser("teaser");
         blogEntry.setHtmlTeaser("htmlTeaser");
+        blogEntry.setCreatedAt(NOW);
         BlogEntry blogEntry2 = new BlogEntry();
         blogEntry2.setId(2L);
         blogEntry2.setTitle("title2");
@@ -31,6 +34,7 @@ class BlogEntryMapperTest {
         blogEntry2.setHtmlContent("htmlContent2");
         blogEntry2.setTeaser("teaser2");
         blogEntry2.setHtmlTeaser("htmlTeaser2");
+        blogEntry2.setCreatedAt(NOW);
         return List.of(blogEntry, blogEntry2);
     }
 
@@ -66,8 +70,8 @@ class BlogEntryMapperTest {
     @Test
     @DisplayName("A list of blog entries should be mapped to a list of DTOs")
     void blogEntryListToBlogEntryDtoList() {
-        BlogEntryDto blogEntryDto = new BlogEntryDto(1L, "title", "content", "htmlContent", "teaser", "htmlTeaser");
-        BlogEntryDto blogEntryDto2 = new BlogEntryDto(2L, "title2", "content2", "htmlContent2", "teaser2", "htmlTeaser2");
+        BlogEntryDto blogEntryDto = new BlogEntryDto(1L, "title", "content", "htmlContent", "teaser", "htmlTeaser", NOW);
+        BlogEntryDto blogEntryDto2 = new BlogEntryDto(2L, "title2", "content2", "htmlContent2", "teaser2", "htmlTeaser2", NOW);
         List<BlogEntryDto> expectedList = List.of(blogEntryDto, blogEntryDto2);
         List<BlogEntry> blogEntries = getBlogEntries();
         List<BlogEntryDto> blogEntryDtos = mapper.blogEntryListToBlogEntryDtoList(blogEntries);

@@ -5,9 +5,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { BlogEntry } from '@app/model/blog-entry';
+import { BlogEntryInput } from '@app/model/blog-entry-input';
 import { MarkdownPipe } from 'ngx-markdown';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
-import { BlogEntry } from '@app/model/blog-entry';
 
 @Component({
   selector: 'app-edit-entry',
@@ -38,7 +39,7 @@ export class EditEntryComponent implements OnInit {
       });
   }
   @Input({ required: true })
-  public entry!: BlogEntry;
+  public entry!: BlogEntryInput;
   protected form!: FormGroup;
   protected previewValues = {
     teaser: '',

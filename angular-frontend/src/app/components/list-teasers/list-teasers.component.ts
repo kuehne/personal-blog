@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { DateLineComponent } from '@app/components/date-line/date-line.component';
 
 import { BlogEntry } from '@app/model/blog-entry';
 
@@ -16,6 +17,7 @@ import { BlogEntry } from '@app/model/blog-entry';
     MatButtonModule,
     RouterLink,
     MatIconModule,
+    DateLineComponent,
   ],
   templateUrl: './list-teasers.component.html',
   styleUrl: './list-teasers.component.scss',

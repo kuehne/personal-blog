@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BlogEntry } from '@app/model/blog-entry';
+import { BlogEntryInput } from '@app/model/blog-entry-input';
 import { environment } from '@env/environment';
 import { Observable, catchError, of, retry } from 'rxjs';
 
@@ -25,13 +26,13 @@ export class BlogEntryService {
     return this.http.get<BlogEntry>(`${environment.apiUrl}/entries/${id}`);
   }
 
-  public create(content: BlogEntry): Observable<BlogEntry> {
+  public create(content: BlogEntryInput): Observable<BlogEntry> {
     return this.http.post<BlogEntry>(`${environment.apiUrl}/entries`, content);
   }
 
   public update(
     id: string | number,
-    content: BlogEntry
+    content: BlogEntryInput
   ): Observable<BlogEntry> {
     return this.http.put<BlogEntry>(
       `${environment.apiUrl}/entries/${id}`,

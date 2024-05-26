@@ -16,7 +16,15 @@ describe('DisplayEntryComponent', () => {
 
     fixture = TestBed.createComponent(DisplayEntryComponent);
     component = fixture.componentInstance;
-    component.entry = { teaser: 'test', title: 'title', content: 'content' };
+    component.entry = {
+      id: 2,
+      htmlContent: '<div>test</div>',
+      htmlTeaser: '<div>teaser</div>',
+      teaser: 'test',
+      title: 'title',
+      content: 'content',
+      createdAt: new Date(),
+    };
     fixture.detectChanges();
   });
 

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { EditEntryComponent } from '@app/components/edit-entry/edit-entry.component';
 import { PageHeaderComponent } from '@app/components/page-header/page-header.component';
 import { BlogEntry } from '@app/model/blog-entry';
+import { BlogEntryInput } from '@app/model/blog-entry-input';
 import { BlogEntryService } from '@app/services/blog-entry.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class CreateEntryPageComponent {
     private readonly blogEntryService: BlogEntryService,
     private readonly router: Router
   ) {}
-  newEntry: BlogEntry = {
+  newEntry: BlogEntryInput = {
     title: '',
     teaser: '',
     content: '',

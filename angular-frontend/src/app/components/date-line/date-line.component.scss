@@ -1,0 +1,11 @@
+.date {
+  display: flex;
+  flex-direction: row;
+  &:before,
+  &:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto 10px;
+  }
+}

@@ -1,7 +1,11 @@
 mat-card {
   margin: 2em 4em;
 }
+mat-card-title {
+  padding: 1em;
+  font-weight: 700;
+}
 
 .teaser {
-  border-bottom: 1px solid black;
+  display: flex;
 }

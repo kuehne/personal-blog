@@ -4,6 +4,9 @@
       <mat-card-title>
         <h2>{{ entry.title }}</h2>
       </mat-card-title>
+      <mat-card-subtitle>
+        <app-date-line [date]="entry.createdAt"></app-date-line>
+      </mat-card-subtitle>
       <mat-card-content [innerHTML]="entry.htmlTeaser"></mat-card-content>
       <mat-card-actions>
         <a [routerLink]="['/', entry.id]" mat-stroked-button color="primary">
