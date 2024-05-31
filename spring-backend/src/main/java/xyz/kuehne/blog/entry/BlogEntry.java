@@ -11,6 +11,9 @@ import xyz.kuehne.blog.base.BaseEntity;
 
 import java.util.Objects;
 
+/**
+ * The DAO Model for Blog Entry
+ */
 @Entity
 @Getter
 @Setter
